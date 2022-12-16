@@ -1,6 +1,8 @@
 /*
  * Работа с коллекцией (массивом объектов)
  */
+
+// У нас есть некий массив объектов
 const friends = [
   { name: 'Mango', online: false },
   { name: 'Kiwi', online: true },
@@ -8,27 +10,43 @@ const friends = [
   { name: 'Ajax', online: false },
 ];
 
+// Выводим исходный массив объектов в табличном виде в консоль
+console.table(friends);
+
+// Перебираем имеющийся массив объектов
+for (const friend of friends) {
+  console.log(friend); // При каждой итерации цыкла - выводим в лог значение отдельного элемента перебираемого массива, т.е. - отдельный объект
+
+  // Вносим изменения в текущий элемент перебираемого массива
+  friend.newProp = 555; // Создаем в соответствующем объекте (элементе массива) новое свойство и присваиваим ему значение
+}
+
+// Выводим измененный массив объектов в табличном виде в консоль
 console.table(friends);
 
 /*
  * Ищем друга по имени
  */
-
+// Создадим мини скрипт-функцию для поиска друга по имени в массиве объектов.
 const findFriendByName = function (allFriends, friendName) {
   for (const friend of allFriends) {
     // console.log(friend);
-    // console.log(friend.name);
+    console.log(friend.name); // Выводим в лог имя при каждой итерации цыкла
 
+    // Задаем условия "нахождения" нужного человека
     if (friend.name === friendName) {
-      return 'НАШЛИ!!!';
+      return 'НАШЛИ!!!'; // Задаем реакцию на событие "нахождения" нужного человека
     }
   }
 
-  return 'НЕ НАШЛИ :(';
+  return 'НЕ НАШЛИ :('; // Задаем реакцию на событие "НЕ нахождения" нужного человека
 };
 
-// console.log(findFriendByName(friends, 'Poly'));
-// console.log(findFriendByName(friends, 'Chelsy'));
+// Выводим в лог результат работы функции с задаными параметрами
+console.log('Ищем друга с именем "Poly" ->', findFriendByName(friends, 'Poly'));
+
+// Выводим в лог результат работы функции с задаными параметрами
+console.log('Ищем друга с именем "Chelsy" ->',findFriendByName(friends, 'Chelsy'));
 
 /*
  * Получаем имена всех друзей
@@ -46,11 +64,11 @@ const getAllNames = function (allFriends) {
   return names;
 };
 
-// console.log(getAllNames(friends));
+console.log(getAllNames(friends));
 
 /*
- * Получаем имена только друзей которые онлайн
- */
+* Получаем имена только друзей которые онлайн
+*/
 const getOnlineFriends = function (allFriends) {
   const onlineFriends = [];
 
@@ -66,7 +84,7 @@ const getOnlineFriends = function (allFriends) {
   return onlineFriends;
 };
 
-// console.log(getOnlineFriends(friends));
+console.log(getOnlineFriends(friends));
 
 const getOfflineFriends = function (allFriends) {
   const offlineFriends = [];
@@ -82,7 +100,7 @@ const getOfflineFriends = function (allFriends) {
   return offlineFriends;
 };
 
-// console.log(getOfflineFriends(friends));
+console.log(getOfflineFriends(friends));
 
 // создать 2 массива онлайн и офлайн?
 // если тру - в первый, если нет - во второй
