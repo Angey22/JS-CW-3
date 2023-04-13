@@ -1,8 +1,9 @@
-//! Видео - 1:13:20...
+//! Видео - 1:13:20...1:54:30
 
 /*
  * Работа с коллекцией (массивом объектов)
  */
+console.groupCollapsed('Работа с коллекцией (массивом объектов)'); //! Log group name
 
 // У нас есть некий массив объектов
 const friends = [
@@ -26,9 +27,15 @@ for (const friend of friends) {
 // Выводим измененный массив объектов в табличном виде в консоль
 console.table(friends);
 
+console.groupEnd(); //! Log group end
+console.log('-1----------------------------------------------');
+
+
 /*
  * Ищем друга по имени
  */
+console.groupCollapsed('Ищем друга по имени'); //! Log group name
+
 // Создадим мини скрипт-функцию для поиска друга по имени в массиве объектов.
 const findFriendByName = function (allFriends, friendName) {
   for (const friend of allFriends) {
@@ -50,9 +57,14 @@ console.log('Ищем друга с именем "Poly" ->', findFriendByName(fr
 // Выводим в лог результат работы функции с задаными параметрами
 console.log('Ищем друга с именем "Chelsy" ->',findFriendByName(friends, 'Chelsy'));
 
+console.groupEnd(); //! Log group end
+console.log('-2----------------------------------------------');
+
+
 /*
  * Получаем имена всех друзей
  */
+console.groupCollapsed('Получаем имена всех друзей'); //! Log group name
 
 const getAllNames = function (allFriends) {
   const names = [];
@@ -68,9 +80,15 @@ const getAllNames = function (allFriends) {
 
 console.log(getAllNames(friends));
 
+console.groupEnd(); //! Log group end
+console.log('-3----------------------------------------------');
+
+
 /*
 * Получаем имена только друзей которые онлайн
 */
+console.groupCollapsed('Получаем имена только друзей которые онлайн'); //! Log group name
+
 const getOnlineFriends = function (allFriends) {
   const onlineFriends = [];
 
@@ -129,3 +147,7 @@ const getFriendsByStatus = function (allFriends) {
 };
 
 console.log(getFriendsByStatus(friends));
+
+console.groupEnd(); //! Log group end
+console.log('-4----------------------------------------------');
+
