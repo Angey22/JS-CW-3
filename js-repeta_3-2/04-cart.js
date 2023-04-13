@@ -1,4 +1,4 @@
-//! Видео - 1:29:30...
+//! Видео - 1:32:30...2:05:38
 
 /*
  * Работем с коллекцией товаров в корзине:
@@ -24,14 +24,14 @@ const cart = {
   add(product) {
     for (const item of this.items) {
       if (item.name === product.name) {
-        item.quantity += 1;
+        item.quantity += 1; //! Изменяем свойство в продукте
         return;
       }
     }
 
     const newProduct = {
-      ...product,
-      quantity: 1,
+      ...product, // Распыление объекта с продуктом
+      quantity: 1, //! Изменяем свойство в продукте
     };
 
     this.items.push(newProduct);
@@ -95,8 +95,10 @@ const cart = {
   decreaseQuantity(productName) {},
 };
 
-console.log(cart.getItems());
+// Запрос к пустой корзине-объекту
+console.log('"cart.getItems()" =>', cart.getItems());
 
+// Добавляем в корзину това
 cart.add({ name: '🍎', price: 50 });
 cart.add({ name: '🍇', price: 70 });
 cart.add({ name: '🍋', price: 60 });
@@ -105,6 +107,7 @@ cart.add({ name: '🍓', price: 110 });
 cart.add({ name: '🍓', price: 110 });
 cart.add({ name: '🍓', price: 110 });
 
+// Выводим в лог карзину после добавления товара
 console.table(cart.getItems());
 
 // cart.remove('🍎');
