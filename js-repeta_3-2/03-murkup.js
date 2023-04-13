@@ -1,3 +1,5 @@
+//! Видео - 1:25:50...
+
 const profile = {
     userName: 'Jacques Gluke',
     tag: 'jqluke',
