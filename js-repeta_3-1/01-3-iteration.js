@@ -1,3 +1,5 @@
+//! Видео - 1:02:30...
+
 /*
  * Перебор через for...in и Object.keys|values|entries
  */
